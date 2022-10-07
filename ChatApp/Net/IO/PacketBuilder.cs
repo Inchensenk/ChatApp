@@ -29,6 +29,14 @@ namespace ChatClient.Net.IO
             _ms.WriteByte(opCode);
         }
 
+        /// <summary>
+        /// Write(ReadOnlySpan<Byte>): Записывает последовательность байтов, содержащихся в source, 
+        /// в текущий поток в памяти и перемещает текущую позицию внутри этого потока в памяти на число записанных байтов.
+        /// 
+        /// BitConverter Класс:
+        /// Преобразует базовые типы данных в массив байтов, а массив байтов — в базовые типы данных.
+        /// </summary>
+        /// <param name="msg"></param>
         public void WriteMessage(string msg)
         {
             var msgLenght = msg.Length;
