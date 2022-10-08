@@ -16,14 +16,27 @@ namespace ChatClient.MVVM.ViewModel
         public ObservableCollection<UserModel> Users { get; set; }
         public ObservableCollection<string> Messages { get; set; }
 
+        /// <summary>
+        /// Команда для подключения к серверу
+        /// </summary>
         public RelayCommand ConnectToServerCommand { get; set; }
         public RelayCommand SendMessageCommand { get; set; }
 
+        /// <summary>
+        /// Свойство: Имя пользователя
+        /// </summary>
         public string UserName { get; set; }
 
         public string Message { get; set; }
 
+        /// <summary>
+        /// Экземпляр класса Сервер
+        /// </summary>
         private Server _server;
+
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public MainViewModel()
         {
             Users = new ObservableCollection<UserModel>();
@@ -32,6 +45,8 @@ namespace ChatClient.MVVM.ViewModel
             _server.connectedEvent += UserConnected;
             _server.msgReceivedEvent += MessageReceived;
             _server.userDisconnectEvent += RemoveUser;
+
+            //Команда подключения к серверу. Если имя пользователя не будет введено в текстовое поле, то команда не выполниться.
             ConnectToServerCommand = new RelayCommand(o => _server.ConnectToServer(UserName), o => !string.IsNullOrEmpty(UserName));
 
             SendMessageCommand = new RelayCommand(o => _server.SendMessageToServer(Message), o => !string.IsNullOrEmpty(Message));

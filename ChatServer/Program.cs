@@ -7,6 +7,9 @@ namespace ChatServer // Note: actual namespace depends on the project name.
 {
     public class Program
     {
+        /// <summary>
+        /// Список пользователей
+        /// </summary>
         static List<Client> _users;
         /// <summary>
         /// Прослушивает подключения от TCP-клиентов сети.
@@ -15,8 +18,16 @@ namespace ChatServer // Note: actual namespace depends on the project name.
         static void Main(string[] args)
         {
             _users = new List<Client>();
-            //IP сервера (локальный IP адрес пк) и порт сервера
-            _listener = new TcpListener(IPAddress.Parse("10.61.140.37"), 7891);
+
+            /*IP сервера (локальный IP адрес пк (Localhost 127.0.0.1)) и порт сервера
+             * IPAddress: Предоставляет IP-адрес.*/
+            _listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 7891);
+
+
+            /*Метод Start инициализирует базовый Socketобъект, привязывает его к локальной конечной точке и ожидает входящих попыток подключения.
+             *При получении Start запроса на подключение метод помещается в очередь и продолжает прослушивать дополнительные запросы до вызова Stop метода. 
+             *Если TcpListener запрос на подключение будет получен после того, как он уже поставил в очередь максимальное количество подключений, 
+             *он создаст SocketException запрос на подключение на клиенте.*/
 
             //Запускает ожидание входящих запросов на подключение.
             _listener.Start();
@@ -25,7 +36,11 @@ namespace ChatServer // Note: actual namespace depends on the project name.
             {
                 //AcceptTcpClient(): Принимает ожидающий запрос на подключение.
                 var client = new Client(_listener.AcceptTcpClient());
+
+                //Добавление ного клиента в список пользователей
                 _users.Add(client);
+
+
                 /*Broadcast the connextion to everyone on the server: Раздать соединение всем на сервере*/
                 BroadcastConnection();
             }

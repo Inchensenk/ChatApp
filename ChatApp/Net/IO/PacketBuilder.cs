@@ -8,13 +8,20 @@ using System.Threading.Tasks;
 
 namespace ChatClient.Net.IO
 {
-    
+    /// <summary>
+    /// Класс добавляет данные в поток памяти, который используется для получения байтов для отправки на сервер
+    /// По сути осуществляется отправка данных от клиента к серверу и наоборот
+    /// </summary>
     public class PacketBuilder
     {
         /// <summary>
         /// Создает поток, резервным хранилищем которого является память.
         /// </summary>
         MemoryStream _ms;
+
+        /// <summary>
+        /// Конструктор по умолчанию, создает поток памяти
+        /// </summary>
         public PacketBuilder()
         {
             _ms = new MemoryStream();
@@ -33,17 +40,25 @@ namespace ChatClient.Net.IO
         /// Write(ReadOnlySpan<Byte>): Записывает последовательность байтов, содержащихся в source, 
         /// в текущий поток в памяти и перемещает текущую позицию внутри этого потока в памяти на число записанных байтов.
         /// 
-        /// BitConverter Класс:
-        /// Преобразует базовые типы данных в массив байтов, а массив байтов — в базовые типы данных.
+        /// BitConverter Класс: Преобразует базовые типы данных в массив байтов, а массив байтов — в базовые типы данных.
         /// </summary>
-        /// <param name="msg"></param>
+        /// <param name="msg">Сообщение</param>
         public void WriteMessage(string msg)
         {
+            //длинна сообщения
             var msgLenght = msg.Length;
+
+            //получение массива байт
             _ms.Write(BitConverter.GetBytes(msgLenght));
+
+            //преобразование символов из сообщения в последовательность байт
             _ms.Write(Encoding.ASCII.GetBytes(msg));
         }
 
+        /// <summary>
+        /// получение массива байт пакета
+        /// </summary>
+        /// <returns>Массив байт</returns>
         public byte[] GetPacketBytes ()
         {
             return _ms.ToArray();

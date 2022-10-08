@@ -11,12 +11,12 @@ namespace ChatServer
     public class Client
     {
         /// <summary>
-        /// Имя пользователя
+        /// Свойство: Имя пользователя
         /// </summary>
         public string UserName { get; set; }
 
         /// <summary>
-        /// Представляет глобальный уникальный идентификатор (GUID).
+        /// Свойство: User ID. Структура Guid представляет глобальный уникальный идентификатор (GUID).
         /// </summary>
         public Guid UID { get; set; }
 
@@ -26,19 +26,26 @@ namespace ChatServer
         public TcpClient ClientSocket { get; set; }
 
         PacketReader _packetReader;
+
+        /// <summary>
+        /// Конструктор с параметром
+        /// </summary>
+        /// <param name="client">Клиент</param>
         public Client(TcpClient client)
         {
             ClientSocket = client;
 
-            //NewGuid(): Инициализирует новый экземпляр структуры Guid.
+            //Генерация нового идентификатора пользователя при каждом создании экземляра клиента
             UID = Guid.NewGuid();
 
             _packetReader = new PacketReader(ClientSocket.GetStream());
 
             var opCode = _packetReader.ReadByte();
+
+            //имени пользователя присваивается прочитанная строка
             UserName = _packetReader.ReadMessage();
 
-            
+            //Отображение в консоли времени подключения клиента и его имени пользователя
             Console.WriteLine($"[{DateTime.Now}]: Client has connected with the userName: {UserName}");
 
             Task.Run(() => Process());

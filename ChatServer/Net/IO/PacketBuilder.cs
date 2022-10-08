@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ChatServer.Net.IO
 {
+    /// <summary>
+    /// Конструктор пакетов
+    /// </summary>
     public class PacketBuilder
     {
         /// <summary>

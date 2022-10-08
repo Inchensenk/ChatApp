@@ -21,17 +21,26 @@ namespace ChatClient.Net
         public event Action connectedEvent;
         public event Action msgReceivedEvent;
         public event Action userDisconnectEvent;
+
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public Server()
         {
-            _client = new();
+            _client = new TcpClient();
         }
 
+        /// <summary>
+        /// Подключение к серверу
+        /// </summary>
+        /// <param name="userName">Имя пользователя</param>
         public void ConnectToServer(string userName)
         {
+            //Если клиент не подключен
             if(!_client.Connected)
             {
-                //Локальный IP адрес и порт
-                _client.Connect("10.61.140.37", 7891);
+                //Подключение клиента к IP адресу (Localhost 127.0.0.1) и порту
+                _client.Connect("127.0.0.1", 7891);
                 PacketReader = new(_client.GetStream());
 
                 if (!string.IsNullOrEmpty(userName))
@@ -39,6 +48,7 @@ namespace ChatClient.Net
                     var connectPacket = new PacketBuilder();
 
                     connectPacket.WriteOpCode(0);
+
 
                     connectPacket.WriteMessage(userName);
 
