@@ -41,9 +41,11 @@
                     Content="Connect"
                     Command="{Binding ConnectToServerCommand}"/>
             
+            <!--Привязка списка к элементам обозреваемой коллекции из пользователей--> 
             <ListView ItemsSource="{Binding Users}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        <!--Привязка текста к имени пользователя-->
                         <TextBlock Text="{Binding UserName}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -55,6 +57,7 @@
             <ListView Height="380"
                       ItemsSource="{Binding Messages}"/>
 
+            <!--привязка-->
             <StackPanel Orientation="Horizontal">
                 <TextBox Height="55"
                          Width="545"

@@ -18,8 +18,19 @@ namespace ChatClient.Net
 
         public PacketReader PacketReader;
 
+        /// <summary>
+        /// событие подключения
+        /// </summary>
         public event Action connectedEvent;
+
+        /// <summary>
+        /// событие получения сообщения
+        /// </summary>
         public event Action msgReceivedEvent;
+
+        /// <summary>
+        /// событие отключения пользователя от сервера
+        /// </summary>
         public event Action userDisconnectEvent;
 
         /// <summary>
@@ -41,6 +52,7 @@ namespace ChatClient.Net
             {
                 //Подключение клиента к IP адресу (Localhost 127.0.0.1) и порту
                 _client.Connect("127.0.0.1", 7891);
+                //GetStream(): Возвращает объект NetworkStream, используемый для отправки и получения данных.
                 PacketReader = new(_client.GetStream());
 
                 if (!string.IsNullOrEmpty(userName))
@@ -70,19 +82,21 @@ namespace ChatClient.Net
             {
                 while (true)
                 {
+                    //код операции
                     var opCode = PacketReader.ReadByte();
                     switch (opCode)
                     {
-                        case 1:
-                            connectedEvent?.Invoke();
+                        
+                        case 1://если код операции равен 1
+                            connectedEvent?.Invoke();//то срабатывает событие на подключение клиента
                             break;
 
-                        case 5:
-                            msgReceivedEvent?.Invoke();
+                        case 5://если код операции равен 5
+                            msgReceivedEvent?.Invoke(); //то срабатывает событие на получение сообщения
                             break;
 
-                        case 10:
-                            userDisconnectEvent?.Invoke();
+                        case 10://если код операции равен 10
+                            userDisconnectEvent?.Invoke();//то срабатывает событие на отключение клиента от сервера
                             break;
 
                         default:
@@ -93,12 +107,16 @@ namespace ChatClient.Net
             });
         }
 
+        /// <summary>
+        /// Отправка сообщения на сервер
+        /// </summary>
+        /// <param name="message">Сообщение</param>
         public void SendMessageToServer(string message)
         {
             var messagePacket = new PacketBuilder();
-            messagePacket.WriteOpCode(5);
+            messagePacket.WriteOpCode(5);//присваиваем написанию сообщения код операции равный 5
             messagePacket.WriteMessage(message);
-            _client.Client.Send(messagePacket.GetPacketBytes());
+            _client.Client.Send(messagePacket.GetPacketBytes());//отправляем массив байт из сообщения
         }
     }
 }

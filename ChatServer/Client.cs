@@ -60,7 +60,7 @@ namespace ChatServer
                     var opCode = _packetReader.ReadByte();
                     switch (opCode)
                     {
-                        case 5:
+                        case 5://case 5 так как мы ранее присвоили отправке сообщений код операции равный 5
                             var msg = _packetReader.ReadMessage();
                             Console.WriteLine($"[{DateTime.Now}]: Message received! {msg}");
                             Program.BroadcastMessage($"[{DateTime.Now}]: [{UserName}]: {msg}");
@@ -71,9 +71,9 @@ namespace ChatServer
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine($"[{UID.ToString()}]: Disconnected!");
+                    Console.WriteLine($"[{UID.ToString()}]: Disconnected!");//сообщение об отключении от сервера клиента
                     Program.BroadcastDisconnect(UID.ToString());
-                    ClientSocket.Close();
+                    ClientSocket.Close();//Удаление клиента и закрытие подключения.  Close(): Удаляет данный экземпляр TcpClient и запрашивает закрытие базового подключения TCP.
                     break;
                     
                 }

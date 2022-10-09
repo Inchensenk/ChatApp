@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ChatClient.Net.IO
 {
+    /// <summary>
+    /// класс считывающий пакет данных
+    /// </summary>
     public class PacketReader : BinaryReader
     {
         private NetworkStream _ns;
