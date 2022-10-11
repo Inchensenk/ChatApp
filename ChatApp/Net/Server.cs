@@ -51,7 +51,7 @@ namespace ChatClient.Net
             if(!_client.Connected)
             {
                 //Подключение клиента к IP адресу (Localhost 127.0.0.1) и порту
-                _client.Connect("127.0.0.1", 7891);
+                _client.Connect("127.0.0.1", 8000);
                 //GetStream(): Возвращает объект NetworkStream, используемый для отправки и получения данных.
                 PacketReader = new(_client.GetStream());
 

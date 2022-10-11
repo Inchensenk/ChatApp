@@ -10,18 +10,18 @@ namespace ChatServer // Note: actual namespace depends on the project name.
         /// <summary>
         /// Список пользователей
         /// </summary>
-        static List<Client> _users = null!;
+        static List<Client> _users;
         /// <summary>
         /// Прослушивает подключения от TCP-клиентов сети.
         /// </summary>
-        static TcpListener _listener = null!;
+        static TcpListener _listener;
         static void Main(string[] args)
         {
             _users = new List<Client>();
 
-            /*IP сервера (локальный IP адрес пк (Localhost 127.0.0.1)) и порт сервера
+            /*IP сервера (локальный IP адрес пк (Localhost 127.0.0.1)) и порт сервера //10.61.140.37
              * IPAddress: Предоставляет IP-адрес.*/
-            _listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 7891);
+            _listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8000);
 
 
             /*Метод Start инициализирует базовый Socketобъект, привязывает его к локальной конечной точке и ожидает входящих попыток подключения.
@@ -67,7 +67,7 @@ namespace ChatServer // Note: actual namespace depends on the project name.
 
         public static void BroadcastDisconnect(string uid)
         {
-            var disconnectedUser = _users.Where(x => x.UID.ToString() == uid).FirstOrDefault(); disconnectedUser = null!;
+            var disconnectedUser = _users.Where(x => x.UID.ToString() == uid).FirstOrDefault();
             _users.Remove(disconnectedUser);//Удаление отключенного клиента из списка пользователей
             foreach (var user in _users)
             {
