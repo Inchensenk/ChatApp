@@ -14,9 +14,6 @@ namespace ModernChatAppUI.MVVM.Model
         public string Message{ get; set; }
         public DateTime Time { get; set; }
 
-        /// <summary>
-        /// Флаг проверки, было ли сообщение от меня
-        /// </summary>
         public bool IsNativeOrigin { get; set; }
 
         public bool? IsFistMessage { get; set; }

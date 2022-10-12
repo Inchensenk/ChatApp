@@ -43,7 +43,7 @@ namespace ChatClient.Net.IO
         /// BitConverter Класс: Преобразует базовые типы данных в массив байтов, а массив байтов — в базовые типы данных.
         /// </summary>
         /// <param name="msg">Сообщение</param>
-        public void WriteMessage(string msg)
+        /*public void WriteMessage(string msg)
         {
             //длинна сообщения
             var msgLenght = msg.Length;
@@ -53,6 +53,17 @@ namespace ChatClient.Net.IO
 
             //преобразование символов из сообщения в последовательность байт
             _ms.Write(Encoding.ASCII.GetBytes(msg));
+        }*/
+
+        public void WriteMessage(string msg)
+        {
+            var unicodeMessage = Encoding.UTF8.GetBytes(msg);
+
+            var msgLenght = unicodeMessage.Length;
+
+            _ms.Write(BitConverter.GetBytes(msgLenght));
+
+            _ms.Write(unicodeMessage);
         }
 
         /// <summary>

@@ -29,13 +29,22 @@ namespace ChatServer.Net.IO
             _ms.WriteByte(opCode);
         }
 
-        public void WriteMessage(string msg)
+        /*public void WriteMessage(string msg)
         {
             var msgLenght = msg.Length;
             _ms.Write(BitConverter.GetBytes(msgLenght));
             _ms.Write(Encoding.ASCII.GetBytes(msg));
-        }
+        }*/
+        public void WriteMessage(string msg)
+        {
+            var unicodeMessage = Encoding.UTF8.GetBytes(msg);
 
+            var msgLenght = unicodeMessage.Length;
+
+            _ms.Write(BitConverter.GetBytes(msgLenght));
+
+            _ms.Write(unicodeMessage);
+        }
         public byte[] GetPacketBytes()
         {
             return _ms.ToArray();

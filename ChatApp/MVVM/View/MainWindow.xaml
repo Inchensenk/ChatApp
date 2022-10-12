@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp" xmlns:ViewModel="clr-namespace:ChatClient.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="475" Width="820">
+        Title="MainWindow" Height="500" Width="840">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -90,7 +90,8 @@
             <TextBox Height="25"
                      DockPanel.Dock="Top"
                      Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" 
-                     TextChanged="TextBox_TextChanged"/>
+                     Style="{StaticResource UserNameBox}"
+                     />
 
             <!--Кнопка для подключения клиента к серверу-->
             <Button Style="{DynamicResource RoundedButtonStyle}" 
@@ -102,7 +103,7 @@
                     Foreground="White"/>
 
             <!--Привязка списка к элементам обозреваемой коллекции из пользователей-->
-            <ListView ItemsSource="{Binding Users}">
+            <ListView ItemsSource="{Binding Users}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!--Привязка текста к имени пользователя-->
@@ -118,11 +119,13 @@
                       ItemsSource="{Binding Messages}"/>
 
 
-            <StackPanel Orientation="Horizontal">
-                <TextBox Height="55"
+            <StackPanel Orientation="Horizontal" Height="76">
+                <TextBox Height="52"
                          Width="545"
                          VerticalContentAlignment="Center"
-                         Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBox_TextChanged_1"/>
+                         Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" 
+                         TextChanged="TextBox_TextChanged_1"
+                         Style="{StaticResource MessageBox}"/>
                 
                 <Button Style="{DynamicResource RoundedButtonStyle}"
                         Width="55"

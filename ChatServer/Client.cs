@@ -71,7 +71,7 @@ namespace ChatServer
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine($"[{UID.ToString()}]: Disconnected!");//сообщение об отключении от сервера клиента
+                    Console.WriteLine($"[{UID.ToString()}][{UserName.ToString()}]: Disconnected!");//сообщение об отключении от сервера клиента
                     Program.BroadcastDisconnect(UID.ToString());
                     ClientSocket.Close();//Удаление клиента и закрытие подключения.  Close(): Удаляет данный экземпляр TcpClient и запрашивает закрытие базового подключения TCP.
                     break;
