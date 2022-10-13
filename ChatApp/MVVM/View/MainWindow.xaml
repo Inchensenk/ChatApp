@@ -103,7 +103,7 @@
                     Foreground="White"/>
 
             <!--Привязка списка к элементам обозреваемой коллекции из пользователей-->
-            <ListView ItemsSource="{Binding Users}" >
+            <ListView ItemsSource="{Binding Users}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!--Привязка текста к имени пользователя-->
@@ -124,7 +124,6 @@
                          Width="545"
                          VerticalContentAlignment="Center"
                          Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" 
-                         TextChanged="TextBox_TextChanged_1"
                          Style="{StaticResource MessageBox}"/>
                 
                 <Button Style="{DynamicResource RoundedButtonStyle}"

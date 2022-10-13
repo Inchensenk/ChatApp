@@ -15,7 +15,7 @@
                             <TextBox VerticalAlignment="Stretch"
                                      VerticalContentAlignment="Center"
                                      HorizontalAlignment="Stretch"
-                                     x:Name="MessageBox"
+                                     x:Name="UserNameBox"
                                      Background="Transparent"
                                      TextWrapping="Wrap"
                                      BorderThickness="0"
@@ -24,7 +24,7 @@
                                      Margin="8,0,0,0"
                                      Text="{Binding UserName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <TextBox.InputBindings>
-                                    <KeyBinding Command="{Binding SendCommand}" Key="Return"/>
+                                    <KeyBinding Command="{Binding UserConnected}" Key="Return"/>
                                 </TextBox.InputBindings>
                             </TextBox>
 
