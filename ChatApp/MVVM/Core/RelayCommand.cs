@@ -15,6 +15,8 @@ namespace ChatClient.MVVM.Core
     {
         private Action<object> execute;
         private Func<object, bool> canExecute;
+        private string v;
+        private Func<object, string> value;
 
         public event EventHandler CanExecuteChanged
         {
@@ -32,6 +34,7 @@ namespace ChatClient.MVVM.Core
             this.execute = execute;
             this.canExecute = canExecute;
         }
+
 
         /// <summary>
         /// CanExecute(Object) Определяет метод, который определяет, может ли данная команда выполняться в ее текущем состоянии.

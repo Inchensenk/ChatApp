@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp" xmlns:ViewModel="clr-namespace:ChatClient.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="840">
+        Height="500" Width="840"
+        Background="#36393F"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip">
+
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -37,7 +42,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                        <Border x:Name="border" CornerRadius="5" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
                             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -72,29 +77,82 @@
     Он содержит столбцы и строки, количество которых задает разработчик. 
     Для определения строк используется свойство RowDefinitions, 
     а для определения столбцов - свойство ColumnDefinitions:-->
+
+
+
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="2"
+                Background="#252525"
+                MouseDown="OnBorderMouseDown">
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="SGS Chat"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"/>
 
-        <!--Ширина столбцов сетки-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <!--кнопка cвернуть-->
+                    <Button Width="20"
+                            Height="20"
+                            Content="_"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Margin="0,0,0,3"
+                            Click="OnMinimizeButtonClick"/>
 
-        <!--Определяет область, в которой можно упорядочивать дочерние элементы
+                    <!--кнопка развернуть-->
+                    <Button Width="20"
+                            Height="20"
+                            Content="☐"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="OnMaximizedButtonClick"/>
+
+                    <!--кнопка закрыть-->
+                    <Button Width="20"
+                            Height="20"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="OnCloseButtonClick"/>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+
+            <!--Ширина столбцов сетки-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--Определяет область, в которой можно упорядочивать дочерние элементы
         горизонтально либо вертикально относительно друг друга.-->
-        <DockPanel>
+            <DockPanel>
 
-            <!--Текстовое поле принимающее имя пользователя
+                <!--Текстовое поле принимающее имя пользователя
             UpdateSourceTrigger: Односторонняя привязка от источника к приемнику практически мгновенно изменяет свойство приемника
             PropertyChanged: источник привязки обновляется сразу после обновления свойства в приемнике-->
-            <TextBox Height="25"
+                <TextBox Height="25"
                      DockPanel.Dock="Top"
                      Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}" 
                      Style="{StaticResource UserNameBox}"
                      />
 
-            <!--Кнопка для подключения клиента к серверу-->
-            <Button Style="{DynamicResource RoundedButtonStyle}" 
+                <!--Кнопка для подключения клиента к серверу-->
+                <Button Style="{StaticResource RoundedButtonStyle}" 
                     Height="25"
                     DockPanel.Dock="Top"
                     Content="Connect"
@@ -102,38 +160,45 @@
                     Background="#FF64CCF1"
                     Foreground="White"/>
 
-            <!--Привязка списка к элементам обозреваемой коллекции из пользователей-->
-            <ListView ItemsSource="{Binding Users}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <!--Привязка текста к имени пользователя-->
-                        <TextBlock Text="{Binding UserName}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </DockPanel>
+                <!--Привязка списка к элементам обозреваемой коллекции из пользователей-->
+                <ListView ItemsSource="{Binding Users}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--Привязка текста к имени пользователя-->
+                            <TextBlock Text="{Binding UserName}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
 
-        <!--StackPanel: Выравнивает дочерние элементы в одну линию, ориентированную горизонтально или вертикально.-->
-        <StackPanel Grid.Column="1">
-            <ListView Height="380"
-                      ItemsSource="{Binding Messages}"/>
+            <!--StackPanel: Выравнивает дочерние элементы в одну линию, ориентированную горизонтально или вертикально.-->
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
 
 
-            <StackPanel Orientation="Horizontal" Height="76">
-                <TextBox Height="52"
-                         Width="545"
+                <ListView Height="395"
+                          ItemsSource="{Binding Messages}" 
+                      />
+
+
+                <StackPanel Orientation="Horizontal" Height="76">
+
+                    <TextBox Height="60"
+                         Width="548"
                          VerticalContentAlignment="Center"
                          Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" 
                          Style="{StaticResource MessageBox}"/>
-                
-                <Button Style="{DynamicResource RoundedButtonStyle}"
-                        Width="55"
+
+                    <Button Style="{DynamicResource RoundedButtonStyle}"
+                        Width="67"
                         Content="Send"
                         Command="{Binding SendMessageCommand}"
                         Background="#FF64CCF1"
-                        Foreground="White"/>
+                        Foreground="White" Height="62"/>
+                </StackPanel>
+
             </StackPanel>
 
-        </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>

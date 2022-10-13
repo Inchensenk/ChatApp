@@ -29,6 +29,8 @@ namespace ModernChatAppUI.MVVM.ViewModel
             set
             {
                 _selectedContact = value;
+                //так как мы используем атрибут [CallerMemberName],
+                //то не нужно явно задавать свойство SelectedContact в параметре
                 OnPropertyChanged();
             }
         }
@@ -41,6 +43,8 @@ namespace ModernChatAppUI.MVVM.ViewModel
             set
             {
                 _message = value;
+                //так как мы используем атрибут [CallerMemberName],
+                //то не нужно явно задавать свойство Message в параметре
                 OnPropertyChanged();
             }
             

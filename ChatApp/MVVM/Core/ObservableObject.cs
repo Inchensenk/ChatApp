@@ -6,13 +6,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModernChatAppUI.Core
+namespace ChatClient.MVVM.Core
 {
-    /* 1) Не нужно реализовывать INotifyPropertyChanged, если нужно обновлять пользовательский интерфейс из пользовательского интерфейса, а источником привязки является обычный старый обьект clr
-       2) Если планируется обновлять значения из кода позади, то реализация INotifyPropertyChanged нужна */
     public class ObservableObject : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// атрибут [CallerMemberName] позволяет получить метод или имя свойства вызывающего метода

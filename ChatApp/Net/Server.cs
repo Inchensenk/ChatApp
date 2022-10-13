@@ -117,6 +117,7 @@ namespace ChatClient.Net
             messagePacket.WriteOpCode(5);//присваиваем написанию сообщения код операции равный 5
             messagePacket.WriteMessage(message);
             _client.Client.Send(messagePacket.GetPacketBytes());//отправляем массив байт из сообщения
+            
         }
     }
 }

@@ -66,6 +66,8 @@ namespace ChatClient.Net.IO
             _ms.Write(unicodeMessage);
         }
 
+
+
         /// <summary>
         /// получение массива байт пакета
         /// </summary>

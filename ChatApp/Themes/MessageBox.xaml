@@ -8,7 +8,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border CornerRadius="8"
+                    <Border CornerRadius="5"
                             Background="#3E4147">
                         
                         <Grid>
