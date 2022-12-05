@@ -10,10 +10,7 @@ namespace ChatClient.MVVM.Model.Entities
     {
         public int Id { get; set; }
         public string NickName { get; set; } = null!;
-        public string Email { get; set; }=null!;
-        public string Password { get; set; } = null!;
         public string Phone { get; set; } = null!;
-        public string Avatar { get; set; } = null!;
-        public string City { get; set; } = null!;
+        
     }
 }

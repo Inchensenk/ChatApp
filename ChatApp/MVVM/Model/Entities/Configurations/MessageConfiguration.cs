@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChatClient.MVVM.Model.Entities.Configurations
 {
-    internal class MessageConfiguration
+    public class MessageConfiguration
     {
     }
 }

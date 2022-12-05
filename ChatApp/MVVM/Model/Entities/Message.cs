@@ -9,8 +9,6 @@ namespace ChatClient.MVVM.Model.Entities
     public class Message
     {
         public int Id { get; set; }
-        public string UserFrom { get; set; } = null!;
-        public string UserTo { get; set; } = null!;
         public int ChatId { get; set; }
         public string MessageText { get; set; } = null!;
         public DateTime DateCreated { get; set; }

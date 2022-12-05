@@ -9,8 +9,7 @@ namespace ChatClient.MVVM.Model.Entities
     public class Chat
     {
         public int Id { get; set; }
-        public string ChatName { get; set; } = null!;
-        public string ChatLogo { get; set; } = null!;
-        public int ChatId { get; set; }
+        public string NickName { get; set; } = null!;
+        public string PhoneNumber { get; set; } = null!;
     }
 }
