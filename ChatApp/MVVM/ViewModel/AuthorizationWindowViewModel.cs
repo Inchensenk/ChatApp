@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatClient.MVVM.Model.Entities.Configurations
+namespace ChatClient.MVVM.ViewModel
 {
-    internal class UserChatLinkConfiguration
+    internal class AuthorizationWindowViewModel :
     {
     }
 }

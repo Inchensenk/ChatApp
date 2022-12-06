@@ -176,8 +176,7 @@
 
 
                 <ListView Height="395"
-                          ItemsSource="{Binding Messages}" 
-                      />
+                          ItemsSource="{Binding Messages}"/>
 
 
                 <StackPanel Orientation="Horizontal" Height="76">
