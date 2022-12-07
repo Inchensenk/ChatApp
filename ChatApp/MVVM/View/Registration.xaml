@@ -5,8 +5,103 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatClient.MVVM.View"
         mc:Ignorable="d"
-        Title="Registration" Height="450" Width="800">
+        Title="Registration" Height="450" Width="300"
+        Background="#363933"
+        WindowStyle="None"
+        AllowsTransparency="False"
+        ResizeMode="NoResize">
     <Grid>
-        
+
+        <Grid.RowDefinitions>
+            <!--Строка заголовка-->
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.ColumnSpan="2"
+                Background="#252525"
+                MouseDown="OnBorderMouseDown">
+            <!--при нажатии на рамку левой кнопкой мышы можно перетаскивать окно приложения-->
+
+            <Grid HorizontalAlignment="Stretch">
+                <!--Название приложения-->
+                <Label Content="Authorization"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Left"/>
+
+                <!--Кнопки: закрыть, свернуть, развернуть-->
+                <StackPanel HorizontalAlignment="Right"
+                            Orientation="Horizontal"
+                            VerticalAlignment="Top">
+
+                    <!--кнопка cвернуть-->
+                    <Button Width="20"
+                            Height="20"
+                            Content="_"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Margin="0,0,0,3"
+                            Click="OnMinimizeButtonClick"/>
+
+                    <!--кнопка развернуть-->
+                    <Button Width="20"
+                            Height="20"
+                            Content="☐"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="OnMaximizedButtonClick"/>
+
+                    <!--кнопка закрыть-->
+                    <Button Width="20"
+                            Height="20"
+                            Content="✕"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Foreground="Gray"
+                            FontWeight="Bold"
+                            Click="OnCloseButtonClick"/>
+
+                </StackPanel>
+            </Grid>
+
+        </Border>
+        <Grid HorizontalAlignment="Center" Height="NaN" Margin="0,136,0,-287">
+            <TextBox HorizontalAlignment="Center" 
+                Height="36" 
+                Width="218" 
+                TextWrapping="Wrap" Margin="0,34,0,106"/>
+            <TextBox HorizontalAlignment="Center" 
+                Height="36" 
+                Width="218" 
+                TextWrapping="Wrap" Margin="0,100,0,40"/>
+            <Label Content="Password" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Height="27" 
+                Width="218"
+                Foreground="#FF717126" 
+                HorizontalContentAlignment="Center"
+                FontSize="15" Margin="0,71,0,0"/>
+            <Label Content="Login" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Height="32" 
+                Width="218"
+                Foreground="#FF717126" 
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Bottom"
+                FontSize="15"/>
+            <Button
+                Content="Sign up"
+                Foreground="#FF717126" 
+                Background="#252525" 
+                Margin="0,178,0,-27"/>
+        </Grid>
+
     </Grid>
 </Window>

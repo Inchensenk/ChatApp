@@ -25,6 +25,9 @@ namespace ChatApp
             InitializeComponent();
         }
 
+
+
+
         /// <summary>
         /// Минимизация окна
         /// </summary>
