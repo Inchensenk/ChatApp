@@ -30,7 +30,7 @@
 
             <Grid HorizontalAlignment="Stretch">
                 <!--Название приложения-->
-                <Label Content="Authorization"
+                <Label Content="Sign in"
                        Foreground="Gray"
                        FontWeight="SemiBold"
                        HorizontalAlignment="Left"/>
