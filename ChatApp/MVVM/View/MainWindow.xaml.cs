@@ -31,8 +31,6 @@ namespace ChatApp
         /// <summary>
         /// Минимизация окна
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
@@ -41,8 +39,6 @@ namespace ChatApp
         /// <summary>
         /// Развертывание окна на весь
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void OnMaximizedButtonClick(object sender, RoutedEventArgs e)
         {
             if (Application.Current.MainWindow.WindowState != WindowState.Maximized)

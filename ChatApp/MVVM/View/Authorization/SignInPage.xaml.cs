@@ -10,18 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ChatClient.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для SignUpSignIn.xaml
+    /// Логика взаимодействия для SignInPage.xaml
     /// </summary>
-    public partial class SignUpSignIn : Window
+    public partial class SignInPage : Page
     {
-        public SignUpSignIn()
+        public SignInPage()
         {
             InitializeComponent();
         }
+
+        private void OnSignUpButtonClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SignUpPage());
+        }
+
     }
 }

@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace ChatClient.MVVM.ViewModel
 {
-    internal class MainViewModel : ObservableObject
+    public class MainViewModel : ObservableObject
     {
         /*ObservableCollection Представляет динамическую коллекцию данных, 
         * которая предоставляет уведомления при добавлении или удалении элементов или обновлении всего списка.*/

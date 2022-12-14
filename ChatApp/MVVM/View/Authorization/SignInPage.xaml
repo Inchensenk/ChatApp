@@ -13,11 +13,13 @@
                 Height="36" 
                 Width="218" 
                 TextWrapping="Wrap" Margin="0,188,0,326"/>
+        
         <TextBox HorizontalAlignment="Center" 
                 Height="36" 
                 Width="218" 
                 TextWrapping="Wrap" Margin="0,286,0,228"/>
-        <Label Content="Password" 
+        
+        <Label  Content="Password" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
                 Height="27" 
@@ -25,7 +27,8 @@
                 Foreground="#FF717126" 
                 HorizontalContentAlignment="Center"
                 FontSize="15" Margin="0,259,0,0"/>
-        <Label Content="Login" 
+        
+        <Label  Content="Login" 
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Top" 
                 Height="32" 
@@ -43,12 +46,16 @@
         <Label Content="OR"
                HorizontalAlignment="Center" 
                VerticalAlignment="Top"
-               Foreground="#FF717126" RenderTransformOrigin="0.576,6.086" Margin="0,392,0,0" />
+               Foreground="#FF717126" 
+               RenderTransformOrigin="0.576,6.086" 
+               Margin="0,392,0,0" />
+        
         <Button
             Content="Sign up"    
             Foreground="#FF717126" 
             Background="#252525" 
             Margin="79,423,79,94"
-            Click="Button_Click"/>
+            Click="OnSignUpButtonClick"/>
+        
     </Grid>
 </Page>

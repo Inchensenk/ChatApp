@@ -16,23 +16,20 @@ using System.Windows.Shapes;
 namespace ChatClient.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для SignInPage.xaml
+    /// Логика взаимодействия для SignUpPage.xaml
     /// </summary>
-    public partial class SignInPage : Page
+    public partial class SignUpPage : Page
     {
-        public SignInPage()
+        public SignUpPage()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OnSignInButtonClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SignUpPage());
+            NavigationService.Navigate(new SignInPage());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
     }
 }

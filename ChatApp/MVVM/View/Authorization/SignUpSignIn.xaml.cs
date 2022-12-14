@@ -1,5 +1,4 @@
-﻿using ChatServer.EFCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,23 +15,16 @@ using System.Windows.Shapes;
 namespace ChatClient.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для AuthorizationWindow.xaml
+    /// Логика взаимодействия для SignUpSignIn.xaml
     /// </summary>
-    public partial class AuthorizationWindow : Window
+    public partial class SignUpSignIn : Window
     {
-        ApplicationContext applicationContext;
-        public AuthorizationWindow()
+        public SignUpSignIn()
         {
             InitializeComponent();
-
-            applicationContext = new ApplicationContext();
+            MainFraime.Content=new SignInPage();
         }
 
-        /// <summary>
-        /// Перемещение окна приложения нажатием левой кнопкой мыши на панель
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void OnBorderMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -42,20 +34,13 @@ namespace ChatClient.MVVM.View
         }
 
         /// <summary>
-        /// Сворачивание окна приложения
+        /// Минимизация окна
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void OnMinimizeButtonClick(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
 
-        /// <summary>
-        /// Разворачивание окна приложения
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void OnMaximizedButtonClick(object sender, RoutedEventArgs e)
         {
             if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
@@ -68,14 +53,10 @@ namespace ChatClient.MVVM.View
             }
         }
 
-        /// <summary>
-        /// Закрытие приложения
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
     }
 }
