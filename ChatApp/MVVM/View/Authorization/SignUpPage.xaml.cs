@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatClient.Net.IO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +31,13 @@ namespace ChatClient.MVVM.View
             NavigationService.Navigate(new SignInPage());
         }
 
+        private void foo()
+        {
+            PacketBuilder packetBuilder = new PacketBuilder();
+            packetBuilder.WriteOpCode(5);
+            packetBuilder.WriteMessage("Привет!");
+
+        }
       
     }
 }

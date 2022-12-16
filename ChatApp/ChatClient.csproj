@@ -11,4 +11,8 @@
     <ProjectReference Include="..\ChatServer\ChatServer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+  </ItemGroup>
+
 </Project>
