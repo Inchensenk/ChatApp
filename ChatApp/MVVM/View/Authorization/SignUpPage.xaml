@@ -29,15 +29,19 @@
                 FontSize="15" 
                 Margin="0,162,0,0" 
                 HorizontalAlignment="Center"/>
+        
         <Button
                 Content="Sign up"
                 Foreground="#FF717126" 
                 Background="#252525" 
-                Margin="107,407,123,123"/>
+                Margin="107,407,123,123"
+                Click="OnSignUpButtonClick"/>
         <TextBox 
                 Height="36" 
                 Width="218" 
-                TextWrapping="Wrap" Margin="0,51,0,463" HorizontalAlignment="Center"/>
+                TextWrapping="Wrap" 
+                Margin="0,51,0,463" 
+                HorizontalAlignment="Center"/>
         <TextBox 
                 Height="36" 
                 Width="218" 
@@ -60,7 +64,10 @@
         <TextBox 
                 Height="36" 
                 Width="218" 
-                TextWrapping="Wrap" Margin="0,278,0,236" HorizontalAlignment="Center"/>
+                TextWrapping="Wrap" 
+                Margin="0,278,0,236" 
+                HorizontalAlignment="Center"
+                />
         <Label Content="LastName" 
                 VerticalAlignment="Top" 
                 Height="27" 

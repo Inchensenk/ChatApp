@@ -31,13 +31,17 @@ namespace ChatClient.MVVM.View
             NavigationService.Navigate(new SignInPage());
         }
 
-        private void foo()
+        //private void foo()
+        //{
+        //    PacketBuilder packetBuilder = new PacketBuilder();
+        //    packetBuilder.WriteOpCode(5);
+        //    packetBuilder.WriteMessage("Привет!");
+
+        //}
+
+        private void OnSignUpButtonClick(object sender, RoutedEventArgs e)
         {
-            PacketBuilder packetBuilder = new PacketBuilder();
-            packetBuilder.WriteOpCode(5);
-            packetBuilder.WriteMessage("Привет!");
 
         }
-      
     }
 }

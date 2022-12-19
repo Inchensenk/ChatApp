@@ -13,11 +13,25 @@ namespace ChatClient.MVVM.Core
      *Реализуйте команду, определив класс, реализующий ICommand и специально реализующий Execute метод.*/
     public class RelayCommand : ICommand
     {
+        /// <summary>
+        /// Функция которую будем передавать в параметры
+        /// </summary>
         private Action<object> execute;
+
+        /// <summary>
+        /// Флаг хранит информацию о том, можно ли выполнить функцию или нет
+        /// </summary>
         private Func<object, bool> canExecute;
+
+
         private string v;
         private Func<object, string> value;
 
+
+
+        /// <summary>
+        /// Событие CanExecuteChanged вызывается при изменении условий, указывающий, может ли команда выполняться. Для этого используется событие CommandManager.RequerySuggested.
+        /// </summary>
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested+=value; }

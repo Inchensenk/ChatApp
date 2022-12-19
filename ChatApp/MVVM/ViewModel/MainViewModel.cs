@@ -104,9 +104,7 @@ namespace ChatClient.MVVM.ViewModel
             Application: Предоставляет методы и свойства static для управления приложением, 
             например методы для запуска и остановки приложения, 
             для обработки сообщений Windows и свойства для получения сведений о приложении. 
-            Этот класс не наследуется.
-            
-             */
+            Этот класс не наследуется.*/
             if (!Users.Any(x=> x.UID==user.UID))
             {
                 Application.Current.Dispatcher.Invoke(() => Users.Add(user));

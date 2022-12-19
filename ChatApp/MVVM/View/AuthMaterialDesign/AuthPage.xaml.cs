@@ -25,7 +25,9 @@ namespace ChatClient.MVVM.View.AuthMaterialDesign
             InitializeComponent();
         }
 
-        
-
+        private void OnRegistrationButtonClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

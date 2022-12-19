@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatApp" xmlns:ViewModel="clr-namespace:ChatClient.MVVM.ViewModel"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Height="500" Width="840"
         Background="#36393F"
         WindowStyle="None"
