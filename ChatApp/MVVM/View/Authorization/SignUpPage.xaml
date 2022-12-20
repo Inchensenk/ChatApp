@@ -9,86 +9,97 @@
       Title="SignUpPage">
 
     <Grid>
-        <TextBox 
-                Height="36" 
-                Width="218" 
-                TextWrapping="Wrap" Margin="0,195,0,319" HorizontalAlignment="Center"/>
-        <Label Content="FirstName" 
-                Width="218"
-                Foreground="#FF717126" 
-                HorizontalContentAlignment="Center"
-                FontSize="15" 
-                HorizontalAlignment="Center" Margin="0,237,0,285"/>
-        <Label Content="PhoneNumber" 
-                VerticalAlignment="Top" 
-                Height="32" 
-                Width="218"
-                Foreground="#FF717126" 
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Bottom"
-                FontSize="15" 
-                Margin="0,162,0,0" 
-                HorizontalAlignment="Center"/>
+        <TextBox Height="36" 
+                 Width="218" 
+                 TextWrapping="Wrap" Margin="0,195,0,319" 
+                 HorizontalAlignment="Center"/>
         
-        <Button
-                Content="Sign up"
+        <Label Content="FirstName" 
+               Width="218"
+               Foreground="#FF717126" 
+               HorizontalContentAlignment="Center"
+               FontSize="15" 
+               HorizontalAlignment="Center" 
+               Margin="0,237,0,285"/>
+        
+        <Label Content="PhoneNumber" 
+               VerticalAlignment="Top" 
+               Height="32" 
+               Width="218"
+               Foreground="#FF717126" 
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Bottom"
+               FontSize="15" 
+               Margin="0,162,0,0" 
+               HorizontalAlignment="Center"/>
+        
+        <Button Content="Sign up"
                 Foreground="#FF717126" 
                 Background="#252525" 
                 Margin="107,407,123,123"
                 Click="OnSignUpButtonClick"/>
+        
         <TextBox 
                 Height="36" 
                 Width="218" 
                 TextWrapping="Wrap" 
                 Margin="0,51,0,463" 
                 HorizontalAlignment="Center"/>
-        <TextBox 
-                Height="36" 
-                Width="218" 
-                TextWrapping="Wrap" Margin="0,120,0,394" HorizontalAlignment="Center"/>
+        
+        <TextBox Height="36" 
+                 Width="218" 
+                 TextWrapping="Wrap" 
+                 Margin="0,120,0,394" 
+                 HorizontalAlignment="Center"/>
+        
         <Label Content="Password" 
-                VerticalAlignment="Top" 
-                Height="27" 
-                Width="218"
-                Foreground="#FF717126" 
-                HorizontalContentAlignment="Center"
-                FontSize="15" Margin="0,93,0,0" HorizontalAlignment="Center"/>
-        <Label Content="Login (NickName)" 
+               VerticalAlignment="Top" 
+               Height="27" 
+               Width="218"
+               Foreground="#FF717126" 
+               HorizontalContentAlignment="Center"
+               FontSize="15" 
+               Margin="0,93,0,0" 
+               HorizontalAlignment="Center"/>
+        
+        <Label  Content="Login (NickName)" 
                 VerticalAlignment="Top" 
                 Height="32" 
                 Width="218"
                 Foreground="#FF717126" 
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Bottom"
-                FontSize="15" HorizontalAlignment="Center" Margin="0,18,0,0"/>
-        <TextBox 
-                Height="36" 
-                Width="218" 
-                TextWrapping="Wrap" 
-                Margin="0,278,0,236" 
-                HorizontalAlignment="Center"
-                />
-        <Label Content="LastName" 
-                VerticalAlignment="Top" 
-                Height="27" 
-                Width="218"
-                Foreground="#FF717126" 
-                HorizontalContentAlignment="Center"
                 FontSize="15" 
-                Margin="0,320,0,0" 
-                HorizontalAlignment="Center"/>
-        <TextBox 
-                Height="36" 
-                Width="218" 
-                TextWrapping="Wrap" 
-                Margin="0,355,0,159" 
-                HorizontalAlignment="Center"/>
-        <Button
-            Content="Sign in"
-            Foreground="#FF717126" 
-            Background="#252525" 
-            Margin="206,468,24,61" 
-            Click="OnSignInButtonClick"/>
+                HorizontalAlignment="Center" 
+                Margin="0,18,0,0"/>
+        
+        <TextBox Height="36" 
+                 Width="218" 
+                 TextWrapping="Wrap" 
+                 Margin="0,278,0,236" 
+                 HorizontalAlignment="Center"/>
+        
+        <Label Content="LastName" 
+               VerticalAlignment="Top" 
+               Height="27" 
+               Width="218"
+               Foreground="#FF717126" 
+               HorizontalContentAlignment="Center"
+               FontSize="15" 
+               Margin="0,320,0,0" 
+               HorizontalAlignment="Center"/>
+        
+        <TextBox Height="36" 
+                 Width="218" 
+                 TextWrapping="Wrap" 
+                 Margin="0,355,0,159" 
+                 HorizontalAlignment="Center"/>
+        
+        <Button Content="Sign in"
+                Foreground="#FF717126" 
+                Background="#252525" 
+                Margin="206,468,24,61" 
+                Click="OnSignInButtonClick"/>
 
         <Label Content="Already have an account?" 
                VerticalAlignment="Top" 

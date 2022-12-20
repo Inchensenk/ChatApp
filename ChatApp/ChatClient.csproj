@@ -21,4 +21,8 @@
     <ProjectReference Include="..\ChatServer\ChatServer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="MVVM\ViewModel\AuthRegMaterialVM\" />
+  </ItemGroup>
+
 </Project>

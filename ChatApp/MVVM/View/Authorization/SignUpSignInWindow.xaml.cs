@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatClient.MVVM.ViewModel.SignInSignUpVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,15 +16,17 @@ using System.Windows.Shapes;
 namespace ChatClient.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для SignUpSignIn.xaml
+    /// Логика взаимодействия для SignUpSignInWindow.xaml
     /// </summary>
-    public partial class SignUpSignIn : Window
+    public partial class SignUpSignInWindow : Window
     {
-        public SignUpSignIn()
+        public SignUpSignInWindow()
         {
             InitializeComponent();
-            MainFraime.Content=new SignInPage();
+            MainFraime.Content=new SignUpSignInWindowVM();
         }
+
+
 
         private void OnBorderMouseDown(object sender, MouseButtonEventArgs e)
         {

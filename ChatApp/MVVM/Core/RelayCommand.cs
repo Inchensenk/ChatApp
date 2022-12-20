@@ -50,6 +50,8 @@ namespace ChatClient.MVVM.Core
         }
 
 
+
+
         /// <summary>
         /// CanExecute(Object) Определяет метод, который определяет, может ли данная команда выполняться в ее текущем состоянии.
         /// </summary>

@@ -1,4 +1,5 @@
-﻿using ChatClient.Net.IO;
+﻿using ChatClient.MVVM.ViewModel.SignInSignUpVM;
+using ChatClient.Net.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace ChatClient.MVVM.View
         public SignUpPage()
         {
             InitializeComponent();
+            this.DataContext = new SignUpSignInWindowVM();
         }
 
         private void OnSignInButtonClick(object sender, RoutedEventArgs e)

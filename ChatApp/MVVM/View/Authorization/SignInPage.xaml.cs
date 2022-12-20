@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ChatClient.MVVM.ViewModel.SignInSignUpVM;
 
 namespace ChatClient.MVVM.View
 {
@@ -23,6 +24,7 @@ namespace ChatClient.MVVM.View
         public SignInPage()
         {
             InitializeComponent();
+            DataContext = new SignInPageVM();
         }
 
         private void OnSignUpButtonClick(object sender, RoutedEventArgs e)
