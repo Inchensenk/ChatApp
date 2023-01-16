@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Navigation;
+using Prism.Commands;
+using System.Windows.Controls;
 
 namespace ChatClient.MVVM.ViewModel.SignInSignUpVM
 {
@@ -18,14 +20,11 @@ namespace ChatClient.MVVM.ViewModel.SignInSignUpVM
         public SignInPageVM()
         {
             SignUpButtonCommand = new DelegateCommand(OnSignUpButtonClick);
-            
         }
-
-
 
         private void OnSignUpButtonClick()
         {
-            NavigationService.Navigate(new SignUpPage());
+            //NavigationService.Navigate(new SignUpPage());
         }
     }
 }

@@ -26,7 +26,8 @@
             <!--Навигационная панель-->
             <Frame x:Name="MainFraime" 
                    Background="#363933"
-                   NavigationUIVisibility="Visible" Margin="0,-22,0,0"/>
+                   NavigationUIVisibility="Hidden" 
+                   Margin="0,-22,0,0"/>
         </Grid>
         
         <Border
