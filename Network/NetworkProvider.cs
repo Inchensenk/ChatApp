@@ -1,14 +1,19 @@
 ﻿using Common;
+using Common.Messages;
 
 namespace Network
 {
     public class NetworkProvider
     {
+        /// <summary>
+        /// Хост
+        /// </summary>
         private readonly string _host;
 
+        /// <summary>
+        /// Порт
+        /// </summary>
         private readonly int _port;
-
-
 
         public NetworkProvider(string host = "localhost", int port = 8888)
         {

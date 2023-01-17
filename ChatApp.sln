@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatServer", "ChatServer\Ch
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernChatAppUI", "ModernChatAppUI\ModernChatAppUI.csproj", "{AD592A96-5D02-455D-B187-66BBD66B4597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{0D694968-DA0A-4E09-A5AF-0B7AFE85B6F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTOs", "DTOs\DTOs.csproj", "{0D694968-DA0A-4E09-A5AF-0B7AFE85B6F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{804E34DE-5F76-42CD-9F84-48D0B9743AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{804E34DE-5F76-42CD-9F84-48D0B9743AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Network", "Network\Network.csproj", "{E7A113DC-9909-4FAC-9C4A-871DB845153A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{804E34DE-5F76-42CD-9F84-48D0B9743AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{804E34DE-5F76-42CD-9F84-48D0B9743AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{804E34DE-5F76-42CD-9F84-48D0B9743AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A113DC-9909-4FAC-9C4A-871DB845153A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A113DC-9909-4FAC-9C4A-871DB845153A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A113DC-9909-4FAC-9C4A-871DB845153A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A113DC-9909-4FAC-9C4A-871DB845153A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
