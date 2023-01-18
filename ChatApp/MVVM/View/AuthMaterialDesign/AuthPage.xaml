@@ -28,14 +28,12 @@
                                   ShadowDepth="0"/>
             </Border.Effect>
 
-            <StackPanel>
-                <TextBlock Text="Авторизация!"
+            <StackPanel Height="115">
+                <TextBlock Text="Авторизация"
                            FontSize="30"
                            FontWeight="Bold"
                            Margin="0 0 0 20"
                            TextAlignment="Center"/>
-
-                
 
                 <!--Кнопки стилезуются стилями подключенной библиотеки Material Design In XAML-->
                 <Grid Margin="0 0 0 20">

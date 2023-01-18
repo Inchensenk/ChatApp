@@ -50,8 +50,7 @@
                 <!--Текстбокс с подсказкой "Введите логин", подсказка анимирует при в вводе-->
                 <TextBox x:Name="textBoxLogin"
                          materialDesign:HintAssist.Hint="Введите логин"
-                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                         />
+                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
 
                 <TextBox x:Name="textBoxFirsName"
                          materialDesign:HintAssist.Hint="Введите имя"
