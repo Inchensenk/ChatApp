@@ -19,7 +19,7 @@ namespace ChatClient.MVVM.Core
         private Action<object> execute;
 
         /// <summary>
-        /// Флаг хранит информацию о том, можно ли выполнить функцию или нет
+        /// Флаг, хранит информацию о том, можно ли выполнить функцию или нет
         /// </summary>
         private Func<object, bool> canExecute;
 

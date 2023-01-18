@@ -11,16 +11,18 @@ namespace Common.Messages
     {
 
         [ProtoMember(1)]
-        public RequestStatus Status { get; private set; }
+        public RequestStatus Status { get; private set; }//статус запроса
 
         [ProtoMember(2)]
-        public string? Context { get; private set; }
+        public string? Context { get; private set; }//контекст ошибки
 
         [ProtoMember(3)]
-        public byte[]? Data { get; private set; }
+        public byte[]? Data { get; private set; }//данные
 
 
-
+        /// <summary>
+        /// Конструктор по умолчанию нужен для корректной работы ProtoBuf
+        /// </summary>
         public ResponseMessage()
         {
             //
